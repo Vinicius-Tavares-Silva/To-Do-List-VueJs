@@ -1,16 +1,23 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <MyHeader autor="Vinicius Tavares" />
+  <MyList :tasks="this.tasks" @remove="this.tasks.splice($event, 1)"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MyHeader from './components/MyHeader.vue';
+import MyList from './components/MyList.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    MyHeader,
+    MyList
+  },
+  data() {
+    return {
+      tasks: ["Estudar", "Passear" ,"Trabalhar"]
+    }
+  },
 }
 </script>
 
@@ -21,6 +28,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 0px;
 }
 </style>
