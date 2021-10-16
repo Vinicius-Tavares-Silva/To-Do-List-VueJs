@@ -1,5 +1,7 @@
 <template>
-  <ListItem v-for="(task, index) in this.tasks" :key="index" :task="task" @remove="$emit('remove', index)"/>
+    <ul>
+        <ListItem v-for="(task, index) in this.tasks" :key="index" :task="task" @remove="$emit('remove', index)"/>
+    </ul>
 </template>
 
 <script>
@@ -17,6 +19,11 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+    ul {
+        margin: 20px auto;
+        text-align: center;
+        padding: 5px;
+        list-style-type: none;
+    }
 </style>

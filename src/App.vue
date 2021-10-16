@@ -1,24 +1,27 @@
 <template>
   <MyHeader autor="Vinicius Tavares" />
-  <MyList :tasks="this.tasks" @remove="this.tasks.splice($event, 1)"/>
+  <TaskCreator @add="this.tasks.push($event)"/>
+  <MyList :tasks="this.tasks" @remove="this.tasks.splice($event, 1)" />
 </template>
 
 <script>
 import MyHeader from './components/MyHeader.vue';
 import MyList from './components/MyList.vue';
+import TaskCreator from './components/TaskCreator.vue';
 
 export default {
   name: 'App',
   components: {
     MyHeader,
-    MyList
+    MyList,
+    TaskCreator,
   },
   data() {
     return {
-      tasks: ["Estudar", "Passear" ,"Trabalhar"]
-    }
+      tasks: ['Estudar', 'Passear', 'Trabalhar'],
+    };
   },
-}
+};
 </script>
 
 <style>
